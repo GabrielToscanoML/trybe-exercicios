@@ -1,0 +1,31 @@
+h1 {
+    font-family: sans-serif;
+}
+
+p {
+    font-weight: 600;
+    font-size: 3em;
+    font-style: italic;
+}
+
+body {
+    font-size: 16xp;
+    font-weight: bold;
+}
+
+#amarelo{ 
+    background-color: yellow;
+}
+#vermelho{ 
+    background-color: red;
+}
+#marrom{ 
+    background-color: brown;
+}
+
+.color-list{
+    line-height: 25px;
+    font-style: oblique;
+    text-align:center;
+    text-decoration: underline;
+}
