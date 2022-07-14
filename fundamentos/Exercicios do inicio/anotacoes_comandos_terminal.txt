@@ -1,0 +1,130 @@
+ls // lista os arquivos do diretório
+ls -a // lista também os arquivos ocultos
+ls * // mostra tudo que contém no diretório atual e também nos diretórios dentro do diretório
+ls -l ou ll // traz mais informações sobre os arquivos/diretórios. Mostrando principalmente as permissões.
+As permissões de um arquivo/diretório são divididas em 4 partes.
+A primeira parte é o primeiro caractere.
+	Se for um ífen (-), significa que é um arquivo comum
+	Se for um "d", significa que é um diretório.
+A segunda parte têm três caracteres, RWX.
+	R significa que você pode ler (read)
+	W significa que você pode escrever (write)
+	X significa que você pode executar (execute)
+A terceira parte fala o que um certo grupo pode fazer seguindo as regras das 3 letras RWX
+Aquarta parte é em respeito à permissão de outros usuários com cada arquivo/diretório.
+
+Usando o comando "chmod", pode-se alterar permissões dos arquivos/diretórios
+
+cd (nome_diretorio) // entra em um diretório
+cd .. // volta pra pasta anterior
+clear // limpa o terminal
+mkdir (nome_diretorio) // cria um diretório (uma pasta)
+pwd // mostra o endereço completo do diretorio
+cp (nome do arquivo a ser copiado) (nome do arquivo criado/ copia) // copia o arquivo1
+
+cat (nome_arquivo) // mostra o conteudo de um arquivo
+cat > (nome_arquivo) // usa pra colocar conteudo em um arquivo. Se ja tiver conteudo no arquivo, será substituido por esse novo input. Para sair desse modo, é só apertar "ctrl d"
+Para adicionar conteudo em um arquivo que ja tenha conteúdo, usa-se o ">>". Exemplo:
+cat >> (nome_arquivo) 
+Para adicionar o conteudo de dois arquivos em um terceiro, basta usar:
+cat (arquivo1) (arquivo2) > (arquivo a receber)
+podendo tmb fazer:
+cat (arquivo1) (arquivo2) >> (arquivo a receber)
+
+sort (nome_arquivo) // EXIBE o conteudo de forma ordenada. Podendo passar o conteudo ordenado de um arquivo para o outro fazendo: sort < (arquivo1) > (arquivo2)
+logo, o arquivo2 vai receber o conteudo do arquivo1, ordenado.
+
+O pipe | é usado pra poder usar mais de um comando de uma vez, passando o output do primeiro pro segundo. Exemplo:
+who | wc -l // vai mostrar quantas linhas o resultado do comando "who" tem.
+
+
+mv (nome_arquivo) // se a proxima variavel for o nome de outro arquivo, ele altera o nome do primeiro arquivo para o segundo. Se a proxima variavel for um diretorio, ele move esse arquivo para o diretorio.
+exemplo:
+mv arquivo1.txt arquivo2.txt // alterou o nome do 1 pro 2
+mv arquivo1.txt backup // moveu o arquivo1 pro diretorio backup
+
+podendo tambem mover usando um endereço de diretorio (pwd)
+
+rm (nome_arquivo) // exclui um arquivo
+rmdir (nome_diretorio) // exclui um diretorio (so funciona se estiver vazio)
+
+rm -rf (nome_diretorio) // exclui um diretorio que contém arquivos
+
+less (nome_arquivo) // exibe de forma diferente o conteudo de um arquivo. Divide o conteudo em algumas abas (dependendo do tamanho do arquivo) e quando aperta ENTER, avança pra proxima pagina. Para sair desse modo de exibição, tem que apertar a tecla "q"
+Dentro do modo de exibição less, da para procurar por algum conteudo usando um termo específico usando o /(termo de busca). Se achar mais de um conteudo com esse termo, apertando a tecla "n", você avança para o próximo conteudo
+
+grep (termo a ser buscado) (nome_arquivo) // mostra apenas os conteudos que contenham esse termo. Porém, é case sensitive. Ou seja, precisa escrever exatamente como está no conteudo.
+Caso queira buscar sem o case sensitive, o comando fica:
+grep -i (termo a ser buscado) (nome_arquivo)// ou seja, adiciona esse "-i" antes do termo.
+Para buscar frases usando grep, basta colocar a frase entre aspas simples. grep -i ('termo a ser buscado') (nome_arquivo).
+Para fazer uma busca de conteudos que NÃO contenham o termo/frase no arquivo, basta adicionar a letra "v" logo após o "-i":
+grep -iv ('termo a ser buscado') (nome_arquivo) // vai mostrar todos os conteudos que NÃO tenham o termo/frase
+Colocando a letra "n" logo após o "-i", é mostrado em qual linha o conteudo está no arquivo.
+grep -in ('termo a ser buscado') (nome_arquivo)
+Colocando a letra "c" logo após o "-i", mostra quantas vezes o termo de busca aparece no arquivo.
+grep -ic ('termo a ser buscado') (nome_arquivo)// retorna um inteiro
+
+head -(numero) (nome_arquivo) // mostra as N primeiras linhas de um arquivo
+
+tail -(numero) (nome_arquivo) // mostra as N ultimas linhas de um arquivo
+
+wc (nome_arquivo) // retorna 3 inteiros. 1 - numero de linhas que o arquivo possui. 2 - numero de palavras. 3 - Numero de caracteres.
+Podendo também pegar apenas uma informação usando:
+wc -w (nome_arquivo) // mostra quantas palavras
+wc -l (nome_arquivo) // mostra quantas linhas
+wc -c (nome_arquivo) // mostra quantos caracteres
+
+whatis (comando) // fala oq o comando faz, exemplo:
+whatis cp // "copy files", ou seja, copia arquivos.
+
+comando find:
+o "." significa pasta atual
+find . -type d // mostra os diretorios
+find . -type f // mostra os arquivos
+find . -name "(nome de um arquivo) // mostra o caminho do arquivo. Tem que ser o nome do arquivo com a referencia dele, 	exemplo "nomes.txt"
+find . -name "nomedoarquivo*" // quando nao se sabe a referencia
+find . -name "*.txt" // busca pela referencia do arquivo
+
+ps // lista os processos sendo executados no momento
+
+sleep // para o terminal por um tempo (tempo definido em segundos)
+
+& // deixa o processo em background, exemplo:
+sleep 10 & // deixou o processo sleep em background por 10 segundos
+
+cntrl Z // suspende o processo em execução
+
+bg // volta o comando em execução em background
+da pra fazer bg %n
+
+jobs // lista os processos sendo executados que são dependentes do terminal, ou seja, que você executou nesse terminal. Assim que fechar o terminal, os processos se encerram. Já o "ps", lista todos os processos em execução, até mesmo os que não foram chamados no terminal.
+
+fg // volta um processo em execução, porém sem ser no backgroud. exemplo:
+fg %1 // fez com que o processo da posição 1, fosse executado
+
+cntrl C // para e exclui o processo em execução
+
+kill // executa um processo que estava em background, exemplo:
+kill %1 // executa o processo de posição 1
+É possivel também, executar o processo pelo seu numero PID
+exemplo: kill 7632 // executa o processo com o PID de 7632
+Usando o comando: kill -9 (PID do processo), executa o processo de forma forçada.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
