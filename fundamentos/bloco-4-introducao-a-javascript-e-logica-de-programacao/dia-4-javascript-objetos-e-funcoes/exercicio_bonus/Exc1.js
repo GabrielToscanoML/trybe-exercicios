@@ -8,7 +8,7 @@ const letras_romanas = {
   M: 1000,
 };
 
-let string = 'I';
+let string = 'MMMCMLXVII'; //3967
 
 console.log(retorna_numeral(string, letras_romanas));
 
