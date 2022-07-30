@@ -62,8 +62,8 @@
 
       // conteudo auxiliar
       // criando uma variavel que acessa o conteudo de body
-      // let conteudo_body = document.querySelector("body");
-      // console.log(conteudo_body);
+       let conteudo_body = document.querySelector("body");
+       console.log(conteudo_body);
 
       // exercicio 1
       // criando a variavel que cria um titulo e atribuindo texto
@@ -81,7 +81,12 @@
       document.querySelector("body").appendChild(cria_main);
 
       
-
+      // exercicio 3
+      // criando a variavel que cria a tag section filha da main com classe
+      let cria_section = document.createElement('section');
+      cria_section.className = "center-content";
+      // adicionando essa variavel como filho do body
+      document.querySelector("main").appendChild(cria_section);
 
 
 
