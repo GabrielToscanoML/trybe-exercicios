@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <main id="paiDoPai">
+    <section id="pai">
+      <section id="primeiroFilho"></section>
+      <section id="elementoOndeVoceEsta">
+        <section id="primeiroFilhoDoFilho"></section>
+        <section id="segundoEUltimoFilhoDoFilho"></section>
+      </section>
+      Atenção!
+      <section id="terceiroFilho"></section>
+      <section id="quartoEUltimoFilho"></section>
+    </section>
+  </main>
+  <script>
+    
+    // 1-acessando o elemento "elementoOndeVoceEsta"
+    console.log(document.getElementById('elementoOndeVoceEsta'));
+
+    // 2-acessando e adicionando cor ao pai do "elementoOndeVoceEsta"
+    console.log(document.getElementById('elementoOndeVoceEsta').parentNode.style.Color = "red");
+  
+    // 3-acessando o "primeiroFilhodoFilho" e adicionando texto a ele
+    console.log(document.getElementById('primeiroFilhoDoFilho').textContent = "Primeiro filho do filho aqui");
+  
+    // 4-acessando o primeiroFIlho a partir de pai
+    console.log(document.getElementById('pai').firstElementChild);
+
+    // 5-acessando o "primeiroFilho" a partir do "elementoOndeVoceEsta"
+    console.log(document.getElementById('elementoOndeVoceEsta').previousElementSibling);
+
+    // 6-acessando o texto "Atenção!" a partir do "elementoOndeVoceEsta"
+    console.log(document.getElementById('elementoOndeVoceEsta').nextSibling);
+
+    // 7-acessando o terceiroFilho a partir do "elementoOndeVoceEsta"
+    console.log(document.getElementById('elementoOndeVoceEsta').nextSibling.nextSibling);
+
+    // 8-acessando o terceiroFilho a partir do "pai"
+    console.log(document.getElementById('pai').lastElementChild.previousElementSibling);
+
+  </script>
+</body>
+</html>

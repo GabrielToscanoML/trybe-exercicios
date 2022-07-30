@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <main id="paiDoPai">
+    <section id="pai">
+      <section id="primeiroFilho"></section>
+      <section id="elementoOndeVoceEsta">
+        <section id="primeiroFilhoDoFilho"></section>
+        <section id="segundoEUltimoFilhoDoFilho"></section>
+      </section>
+      Atenção!
+      <section id="terceiroFilho"></section>
+      <section id="quartoEUltimoFilho"></section>
+    </section>
+  </main>
+  <script>
+
+    // acessa o pai do pai
+      let paiDoPai = document.getElementById("paiDoPai");
+      let pai_length = document.getElementById("pai").childElementCount;
+
+      // acessa o pai
+      let pai = document.getElementById("pai");
+
+      // pega toda a sessao pai em forma de nodeList
+      let pai_section = paiDoPai.querySelector("section");
+
+      // remove o primeiro elemento do pai
+      let ultimo_filho = pai_section.firstElementChild;
+      pai_section.removeChild(ultimo_filho);
+
+      // remove os dois ultimos elementos do pai
+      for (let index = 2; index < pai_length; index += 1) {
+        let ultimo_filho = pai_section.lastElementChild;
+        pai_section.removeChild(ultimo_filho);
+      }
+
+      // acessa o filho do pai
+      let ondeVoceEsta = pai.querySelector("section");
+
+      // recebe o ultimo filho e remove
+      let ultimo_filho_onde = ondeVoceEsta.lastElementChild;
+      ondeVoceEsta.removeChild(ultimo_filho_onde);
+
+      // imprime resultado no console
+      console.log(paiDoPai);
+
+  </script>
+</body>
+</html>
