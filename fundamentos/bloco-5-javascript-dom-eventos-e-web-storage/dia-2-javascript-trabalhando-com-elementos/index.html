@@ -59,13 +59,28 @@
     <script>
       // COLOQUE SEU CÓDIGO AQUI
 
+
+      // conteudo auxiliar
+      // criando uma variavel que acessa o conteudo de body
+      // let conteudo_body = document.querySelector("body");
+      // console.log(conteudo_body);
+
+      // exercicio 1
       // criando a variavel que cria um titulo e atribuindo texto
       let cria_h1 = document.createElement('h1');
       cria_h1.innerHTML = "Exercício 5.2 - JavaScript DOM";
-      
       // adicionando essa variavel como filho do body
       document.querySelector("body").appendChild(cria_h1);
 
+
+      // exercicio 2
+      // criando a variavel que cria a tag main com uma classe
+      let cria_main = document.createElement('main');
+      cria_main.className = "main-content";
+      // adicionando essa variavel como filho do body
+      document.querySelector("body").appendChild(cria_main);
+
+      
 
 
 
