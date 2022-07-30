@@ -85,10 +85,17 @@
       // criando a variavel que cria a tag section filha da main com classe
       let cria_section = document.createElement('section');
       cria_section.className = "center-content";
-      // adicionando essa variavel como filho do body
+      // adicionando essa variavel como filho da main
       document.querySelector("main").appendChild(cria_section);
 
+      // exercicio 4
+      // criando a variavel que cria a tag p filha da section com texto
+      let cria_p = document.createElement('p');
+      cria_p.innerHTML = "Texto do paragrafo criado no exercicio 4";
+      // adicionando essa variavel como filho da section
+      document.querySelector("section").appendChild(cria_p);
 
+      
 
     </script>
   </body>
