@@ -109,7 +109,12 @@
       // adicionando essa variavel como filho da main
       document.querySelector("main").appendChild(cria_section3);
 
-
+      // exercicio 7
+      // adicionando uma imagem com classe e como filho da section 2
+      const img = document.createElement('img');
+      img.src = "https://picsum.photos/200";
+      img.className = "small-image";
+      document.querySelectorAll("section")[1].appendChild(img);
 
     </script>
   </body>
