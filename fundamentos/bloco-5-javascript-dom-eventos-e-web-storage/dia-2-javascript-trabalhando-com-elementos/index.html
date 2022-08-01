@@ -116,6 +116,20 @@
       img.className = "small-image";
       document.querySelectorAll("section")[1].appendChild(img);
 
+      // exercicio 8
+      // criando uma lista nao ordenada e adicionando como filha da section 3
+      let cria_tag_ul = document.createElement('ul'); // cria tag ul
+      document.querySelector('.right-content').appendChild(cria_tag_ul); // coloca a tag ul dentro da section 3
+      // cria um array com os elementos que vou colocar em lista nao ordenada
+      let arrayNumeros = ['Um', 'Dois', 'Três', 'Quatro' , 'Cinco' , 'Seis' , 'Sete' , 'Oito' , 'Nove' , 'Dez'];
+      for(let index = 0; index < 10; index += 1) {
+        let cria_lista = document.createElement('li'); // crio a lista com os elementos do array
+        cria_lista.innerText = arrayNumeros[index]; // coloco dentro de cada "li" o conteudo de cada posicao do array
+        document.querySelector('ul').appendChild(cria_lista); // crio um novo filho "li" para a "ul"
+      }
+        
+      
+
     </script>
   </body>
 </html>
