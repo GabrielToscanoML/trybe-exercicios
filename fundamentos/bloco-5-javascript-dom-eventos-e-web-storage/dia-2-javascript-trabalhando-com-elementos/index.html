@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Exercício 5.2</title>
+    <style>
+      section {
+        border-color: black;
+        border-style: solid;
+      }
+
+      .title {
+        text-align: center;
+      }
+
+      .main-content {
+        background-color: yellow;
+      }
+
+      .main-content .center-content {
+        background-color: red;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .main-content .center-content p {
+        font-style: italic;
+      }
+
+      .main-content .left-content {
+        background-color: green;
+        width: 60%;
+        margin-left: 0;
+        margin-right: auto;
+      }
+
+      .main-content .left-content .small-image {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 100%;
+      }
+
+      .main-content .right-content {
+        background-color: blue;
+        width: 60%;
+        margin-left: auto;
+        margin-right: 0;
+      }
+
+      .main-content .description {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      // COLOQUE SEU CÓDIGO AQUI
+
+
+      // conteudo auxiliar
+      // criando uma variavel que acessa o conteudo de body
+       let conteudo_body = document.querySelector("body");
+       console.log(conteudo_body);
+
+      // exercicio 1
+      // criando a variavel que cria um titulo e atribuindo texto
+      let cria_h1 = document.createElement('h1');
+      cria_h1.innerHTML = "Exercício 5.2 - JavaScript DOM";
+      // adicionando essa variavel como filho do body
+      document.querySelector("body").appendChild(cria_h1);
+
+
+      // exercicio 2
+      // criando a variavel que cria a tag main com uma classe
+      let cria_main = document.createElement('main');
+      cria_main.className = "main-content";
+      // adicionando essa variavel como filho do body
+      document.querySelector("body").appendChild(cria_main);
+
+      
+      // exercicio 3
+      // criando a variavel que cria a tag section filha da main com classe
+      let cria_section = document.createElement('section');
+      cria_section.className = "center-content";
+      // adicionando essa variavel como filho da main
+      document.querySelector("main").appendChild(cria_section);
+
+      // exercicio 4
+      // criando a variavel que cria a tag p filha da section com texto
+      let cria_p = document.createElement('p');
+      cria_p.innerHTML = "Texto do paragrafo criado no exercicio 4";
+      // adicionando essa variavel como filho da section
+      document.querySelector("section").appendChild(cria_p);
+
+      // exercicio 5
+      // criando a variavel que cria a segunda tag section filha da main com classe
+      let cria_section2 = document.createElement('section');
+      cria_section2.className = "left-content";
+      // adicionando essa variavel como filho da main
+      document.querySelector("main").appendChild(cria_section2);
+
+      // exercicio 6
+      // criando a variavel que cria a terceira tag section filha da main com classe
+      let cria_section3 = document.createElement('section');
+      cria_section3.className = "right-content";
+      // adicionando essa variavel como filho da main
+      document.querySelector("main").appendChild(cria_section3);
+
+      // exercicio 7
+      // adicionando uma imagem com classe e como filho da section 2
+      const img = document.createElement('img');
+      img.src = "https://picsum.photos/200";
+      img.className = "small-image";
+      document.querySelectorAll("section")[1].appendChild(img);
+
+      // exercicio 8
+      // criando uma lista nao ordenada e adicionando como filha da section 3
+      let cria_tag_ul = document.createElement('ul'); // cria tag ul
+      document.querySelector('.right-content').appendChild(cria_tag_ul); // coloca a tag ul dentro da section 3
+      // cria um array com os elementos que vou colocar em lista nao ordenada
+      let arrayNumeros = ['Um', 'Dois', 'Três', 'Quatro' , 'Cinco' , 'Seis' , 'Sete' , 'Oito' , 'Nove' , 'Dez'];
+      for(let index = 0; index < 10; index += 1) {
+        let cria_lista = document.createElement('li'); // crio a lista com os elementos do array
+        cria_lista.innerText = arrayNumeros[index]; // coloco dentro de cada "li" o conteudo de cada posicao do array
+        document.querySelector('ul').appendChild(cria_lista); // crio um novo filho "li" para a "ul"
+      }
+        
+      // exercicio 9
+      // adicionando 3 tags h3 sendo filhas da main
+      for(let index = 0; index < 3; index += 1) {
+        let cria_tag_h3 = document.createElement('h3');
+        document.querySelector('main').appendChild(cria_tag_h3);
+      }
+
+      // exercicios "bonus" de 1 a 6:
+
+      // exercicio 1
+      // adicionar classe title na tag h1
+      document.querySelector('h1').appendChild(document.createElement('title'));
+
+      // exercicio 2
+      // adicionando a classe "description" nas 3 tags h3
+      for(let index = 0; index < 3; index += 1) {
+        document.querySelectorAll('h3')[index].className = 'description';
+      }
+
+      // exercicio 3
+      // removendo a section 2, (left-content) usando .removeChild()
+      document.querySelector('main').removeChild(document.querySelector('.left-content'));
+
+      // exercicio 4
+      // centralizando a section (right-content)
+      let section2 = document.querySelector('.right-content');
+      section2.style.marginRight = 'auto';
+
+      // exercicio 5
+      // alterando a cor de fundo da (center-content)
+      let section1 = document.querySelector('.center-content');
+      section1.style.backgroundColor = 'green';
+
+      // exercicio 6
+      // removendo os dois ultimos elementos da lista nao ordenada
+      document.querySelector('ul').removeChild(document.querySelectorAll('li')[9]);
+      document.querySelector('ul').removeChild(document.querySelectorAll('li')[8]);
+
+    </script>
+  </body>
+</html>
