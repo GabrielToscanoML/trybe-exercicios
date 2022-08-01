@@ -135,6 +135,37 @@
         document.querySelector('main').appendChild(cria_tag_h3);
       }
 
+      // exercicios "bonus" de 1 a 6:
+
+      // exercicio 1
+      // adicionar classe title na tag h1
+      document.querySelector('h1').appendChild(document.createElement('title'));
+
+      // exercicio 2
+      // adicionando a classe "description" nas 3 tags h3
+      for(let index = 0; index < 3; index += 1) {
+        document.querySelectorAll('h3')[index].className = 'description';
+      }
+
+      // exercicio 3
+      // removendo a section 2, (left-content) usando .removeChild()
+      document.querySelector('main').removeChild(document.querySelector('.left-content'));
+
+      // exercicio 4
+      // centralizando a section (right-content)
+      let section2 = document.querySelector('.right-content');
+      section2.style.marginRight = 'auto';
+
+      // exercicio 5
+      // alterando a cor de fundo da (center-content)
+      let section1 = document.querySelector('.center-content');
+      section1.style.backgroundColor = 'green';
+
+      // exercicio 6
+      // removendo os dois ultimos elementos da lista nao ordenada
+      document.querySelector('ul').removeChild(document.querySelectorAll('li')[9]);
+      document.querySelector('ul').removeChild(document.querySelectorAll('li')[8]);
+
     </script>
   </body>
 </html>
