@@ -1,0 +1,49 @@
+body {
+  background-color: aquamarine;
+  margin-left: 50px;
+}
+
+main {
+  display: flex;
+  width: 110%;
+}
+
+#title {
+  font-size: 60px;
+}
+
+section{ 
+  font-size: 20px;
+  width: 60%;
+}
+aside {
+  width: 25%;
+  margin-left: 40px;
+}
+
+#userPreference {
+  font-size: 20px;
+  line-height: 30px;
+  list-style: none;
+  display: block;
+}
+
+#textBackgroundColor input{
+  display: block;
+}
+
+#textColor input{
+  display: block;
+}
+
+#textFontSize input{
+  display: block;
+}
+
+#lineSpacing input{
+  display: block;
+}
+
+#textFontType input{
+  display: block;
+}
