@@ -1,7 +1,7 @@
 "use strict";
 // ./exercises.ts
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.triangleCheck = exports.getPolygonPerimeter = exports.getTriangleArea = exports.getRectangleArea = exports.getSquareArea = void 0;
+exports.getCircleArea = exports.getTrapezeArea = exports.getRhombusArea = exports.triangleCheck = exports.getPolygonPerimeter = exports.getTriangleArea = exports.getRectangleArea = exports.getSquareArea = void 0;
 function getSquareArea(side) {
     return side ** 2;
 }
@@ -25,3 +25,15 @@ function triangleCheck(sideA, sideB, sideC) {
     return checkSideA && checkSideB && checkSideC;
 }
 exports.triangleCheck = triangleCheck;
+function getRhombusArea(largerDiagonal, smallerDiagonal) {
+    return (largerDiagonal * smallerDiagonal) / 2;
+}
+exports.getRhombusArea = getRhombusArea;
+function getTrapezeArea(largerBase, smallerBase, height) {
+    return ((largerBase + smallerBase) * height) / 2;
+}
+exports.getTrapezeArea = getTrapezeArea;
+function getCircleArea(radius) {
+    return (Math.PI * (radius ** 2));
+}
+exports.getCircleArea = getCircleArea;

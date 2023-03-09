@@ -26,3 +26,15 @@ export function triangleCheck(
   const checkSideC = (sideA - sideB) < sideC && sideC < (sideA + sideB);
   return checkSideA && checkSideB && checkSideC;
 }
+
+export function getRhombusArea(largerDiagonal: number, smallerDiagonal: number): number {
+  return (largerDiagonal * smallerDiagonal) / 2;
+}
+
+export function getTrapezeArea(largerBase: number, smallerBase: number, height: number): number {
+  return ((largerBase + smallerBase) * height) / 2;
+}
+
+export function getCircleArea(radius: number): number {
+  return (Math.PI * (radius ** 2));
+}
